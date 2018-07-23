@@ -28,7 +28,7 @@ RUN apt-get install -y \
         libhdf5-dev \
         libpq-dev \
         python-pip \
-        python-dev \ 
+        python-dev
 
 # Python dependencies
 RUN pip install \
