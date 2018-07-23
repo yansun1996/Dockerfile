@@ -31,7 +31,7 @@ RUN apt-get install -y \
         python-dev \ 
 
 # Python dependencies
-RUN pip --no-cache-dir install \
+RUN pip install \
     numpy \
     hdf5storage \
     h5py \
