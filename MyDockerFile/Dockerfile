@@ -28,7 +28,10 @@ RUN apt-get install -y \
         libhdf5-dev \
         libpq-dev \
         python-pip \
-        python-dev
+        python-dev \
+        libsm6 \
+        libxrender1 \
+        libxext-dev
 
 # Python dependencies
 RUN pip install \
