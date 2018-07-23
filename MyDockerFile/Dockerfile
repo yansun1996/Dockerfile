@@ -33,6 +33,9 @@ RUN apt-get install -y \
         libxrender1 \
         libxext-dev
 
+# Update pip
+RUN pip install --upgrade pip
+
 # Python dependencies
 RUN pip install \
     numpy \
