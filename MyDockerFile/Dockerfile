@@ -49,3 +49,6 @@ RUN pip install \
     matplotlib \
     requests \
     opencv-python
+    
+# Update h5py
+RUN pip install h5py --upgrade
