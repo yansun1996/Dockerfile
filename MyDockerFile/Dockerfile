@@ -32,7 +32,8 @@ RUN apt-get install -y \
         libsm6 \
         libxrender1 \
         libxext-dev \
-        vim
+        vim \
+        zip
 
 # Update pip
 RUN pip install --upgrade pip
