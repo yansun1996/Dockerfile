@@ -1,7 +1,6 @@
-# Dockerfile
+### Repository for my Dockfile
 
-# Repository for my Dockfile
+Build Test on Aliyun Docker Image Service:
 
-# Build Test on Aliyun Docker Image Service:
-    * Dockerfile-tf-1.7-cpu [x]
-    * Dockerfile-tf-1.7-gpu [x]
+- [x] Dockerfile-tf-1.7-cpu
+- [x] Dockerfile-tf-1.7-gpu
