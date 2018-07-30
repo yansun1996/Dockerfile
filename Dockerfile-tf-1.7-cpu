@@ -1,5 +1,4 @@
-# Dockerfile with tensorflow gpu support
-# Install CV related packages
+# Dockerfile with tensorflow gpu support. Install CV related packages.
 FROM tensorflow/tensorflow:1.7.0
 MAINTAINER Yan Sun <sunyanfred@163.com>
 
