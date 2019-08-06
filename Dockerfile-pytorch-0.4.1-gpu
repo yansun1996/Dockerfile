@@ -1,0 +1,60 @@
+# This Dockerfile is for dp server with CUDA9
+# Consider upgrade to CUDA10 when the driver compatibility issue is resolved
+
+FROM nvidia/cuda:9.0-cudnn7-runtime-ubuntu16.04
+LABEL maintainer "Yan Sun <sunyanfred@gmail.com>"
+
+RUN apt-get update
+
+# Core linux dependencies. 
+RUN apt-get install -y \
+    build-essential \
+    cmake \ 
+    git \
+    wget \
+    unzip \
+    yasm \
+    pkg-config \
+    libswscale-dev \
+    libtbb2 \
+    libtbb-dev \
+    libjpeg-dev \
+    libpng-dev \
+    libtiff-dev \
+    libjasper-dev \
+    libavformat-dev \
+    libhdf5-dev \
+    libpq-dev \
+    python3-pip \
+    python3-dev \
+    libsm6 \
+    libxrender1 \
+    libxext-dev \
+    vim \
+    zip \
+    python3
+
+# Update pip
+RUN pip3 install --upgrade pip
+
+# Python dependencies
+RUN pip3 install \
+    Cython \
+    cffi==1.11.5 \
+    numpy==1.15.3 \
+    hdf5storage \
+    h5py \
+    scipy \
+    py3nvml \
+    scikit-learn==0.20.0 \
+    psutil \
+    Pillow \
+    matplotlib \
+    requests \
+    opencv-python \
+    pandas==0.23.4 \
+    xlrd==0.9.0 \
+    torch==0.4.1
+    
+# Update h5py
+RUN pip3 install h5py --upgrade
