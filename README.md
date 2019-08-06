@@ -13,3 +13,7 @@ Build Test on Aliyun Docker Image Service:
 * August, 2018
 
   - [x] Dockerfile-tf-1.4.1-gpu-faiss
+  
+* August, 2019
+
+  - [x] Dockerfile-pytorch-0.4.1-gpu
