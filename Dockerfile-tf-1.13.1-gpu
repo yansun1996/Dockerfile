@@ -1,0 +1,44 @@
+FROM nvidia/cuda:10.0-cudnn7-runtime-ubuntu16.04
+LABEL maintainer "Yan Sun <ysun@12sigma.ai>"
+
+# Update
+RUN apt-get update
+
+# Core linux dependencies. 
+RUN apt-get install -y \
+        build-essential \
+        cmake \ 
+        git \
+        wget \
+        unzip \
+        yasm \
+        pkg-config \
+        zip \
+ && rm -rf /var/lib/apt/lists/*
+
+# Get Miniconda
+RUN wget http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh \
+ && bash Miniconda3-latest-Linux-x86_64.sh -p /miniconda -b \
+ && rm Miniconda3-latest-Linux-x86_64.sh
+ENV PATH=/miniconda/bin:${PATH}
+RUN conda update -y conda && conda clean -a
+
+# Create env
+RUN conda create -n py3 python=3.7 && echo "source activate py3" >> ~/.bashrc
+
+# Python packages from conda
+RUN conda install -n py3 -y -c conda-forge \
+    numpy \
+    pandas \
+    xlrd \
+    pillow \
+    opencv \
+    tesseract \
+    scikit-image \
+    scikit-learn \
+    matplotlib \
+ && conda install -n py3 -y -c anaconda tensorflow-gpu==1.13.1 \
+ && conda clean -a
+         
+# Configure your PATH here
+ENV PATH="/miniconda/envs/py3/bin:$PATH"

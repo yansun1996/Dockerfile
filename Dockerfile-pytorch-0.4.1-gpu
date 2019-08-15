@@ -1,6 +1,3 @@
-# This Dockerfile is for dp server with CUDA9
-# Consider upgrade to CUDA10 when the driver compatibility issue is resolved
-
 FROM nvidia/cuda:9.0-cudnn7-runtime-ubuntu16.04
 LABEL maintainer "Yan Sun <sunyanfred@gmail.com>"
 
